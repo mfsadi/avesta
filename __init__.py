@@ -1,2 +1,4 @@
-from avesta.tools.similarity.cbs import similarity
-from avesta.tools.similarity.lexical_sim import lexical_synonym_checker
+from avesta.tools import *
+from avesta.preprocess import *
+from avesta.tests import *
+from avesta.resources import *
