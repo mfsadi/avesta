@@ -17,12 +17,13 @@ pip install avesta
 **Lexical Similarity**
 
 ```Python
-from tools.similarity.lexical_sim import lexical_synonym_checker
+from avesta.tools.similarity.lexical_sim import lexical_synonym_checker
 
 status = lexical_synonym_checker("پیراهن مردانه سایز 12 قرمز", "پیراهن قرمز       مردانه سایز ۱۲")
 print(status)
 # Yes (they are lexically synonyms.)
 ```
+
 
 **Character based Similarity**
 
@@ -30,7 +31,7 @@ print(status)
 
 # Character based similarity gives the distance between two strings. 
 
-from tools.similarity.cbs import similarity
+from avesta.tools.similarity.cbs import similarity
 
 sim = similarity()
 status = sim.char_based_similarity("avesta", "a vesta", threshold=1)
