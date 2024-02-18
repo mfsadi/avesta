@@ -1,3 +1,4 @@
+"""Character Based Similarity (CBS)"""
 import difflib
 from Levenshtein import distance
 

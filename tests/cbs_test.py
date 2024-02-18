@@ -1,5 +1,5 @@
 from tqdm import tqdm
-from avesta.similarity import similarity
+from tools.similarity.cbs import similarity
 import logging
 
 
@@ -9,7 +9,7 @@ def sample_similarity_checking():
     logger = logging.getLogger('Avesta')
     logger.setLevel(logging.INFO)
     logger.info("Start")
-    data = open("shakespeare.txt", 'r').readlines()
+    data = open("../resources/corpora/shakespeare.txt", 'r').readlines()
     data = [line.strip() for line in data]
     all_similar_records = []
     for i in tqdm(data):
