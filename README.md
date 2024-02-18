@@ -1,4 +1,4 @@
-# avesta
+# Avesta
 tools for text and language processing
 
 
