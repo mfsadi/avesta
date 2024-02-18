@@ -4,14 +4,17 @@ Tools for text and language processing
 
 This is a library for text and language (pre) processing.
 
-Installation
+**Installation**
 
-****pip install avesta
+````Bash
+pip install avesta
+````
+
+**Usage**
 
 **Similarity**
 
 **Lexical Similarity**
-Sample usage:
 
 ```Python
 from tools.similarity.lexical_sim import lexical_synonym_checker
