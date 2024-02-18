@@ -32,11 +32,10 @@ def normal(term):
 
 
 def lexical_synonym_checker(phrase_1, phrase_2):
-    global to_stem
-    result = 'No'
-    global term_1, term_2
+    global to_stem, term_1, term_2
     term_1 = phrase_1
     term_2 = phrase_2
+    result = 'No'
     if normal(term_1) == normal(term_2):
         result = 'Yes'
     if result == 'No':
@@ -45,6 +44,3 @@ def lexical_synonym_checker(phrase_1, phrase_2):
             result = 'Yes'
     to_stem = False
     return result
-
-
-print(lexical_synonym_checker("قلم‌مو", "قلم مو"))
