@@ -4,6 +4,10 @@ Tools for text and language processing
 
 This is a library for text and language (pre) processing.
 
+Installation
+
+****pip install avesta
+
 **Similarity**
 
 **Lexical Similarity**
