@@ -1,1 +1,1 @@
-from avesta.resouces.corpora import * 
+from avesta.resources.corpora import * 

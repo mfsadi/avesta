@@ -1,5 +1,5 @@
 from tqdm import tqdm
-from tools.similarity.cbs import similarity
+from avesta.tools.similarity.cbs import similarity
 import logging
 
 

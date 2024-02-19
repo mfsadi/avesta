@@ -1,8 +1,8 @@
 import json
 from tqdm import tqdm
-from preprocess.preprocessing import persian_character_normalizer
-from resources.stopwords import PERSIAN_STOPWORDS
-from tools.stemmers import ps
+from avesta.preprocess.preprocessing import persian_character_normalizer
+from avesta.resources.stopwords import PERSIAN_STOPWORDS
+from avesta.tools.stemmers import ps
 
 term_1 = ''
 term_2 = ''
