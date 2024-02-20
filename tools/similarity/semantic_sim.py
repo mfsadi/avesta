@@ -51,4 +51,5 @@ def semantic_synonym_checker(phrase_1, phrase_2):
         phrase_2 = normal(phrase_2)
     if phrase_1 == phrase_2:
         result = 'Yes'
+    is_synonym_affected = False
     return result
