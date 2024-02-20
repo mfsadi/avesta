@@ -40,10 +40,12 @@ def semantic_synonym_checker(phrase_1, phrase_2):
         for token in ecom_synonyms_dict.keys():
             if token == word:
                 phrase_1 = phrase_1.replace(token, ecom_synonyms_dict[token][0])
+                is_synonym_affected = True
     for word in phrase_2.split():
         for token in ecom_synonyms_dict.keys():
             if token == word:
                 phrase_2 = phrase_2.replace(token, ecom_synonyms_dict[token][0])
+                is_synonym_affected = True
     if is_synonym_affected:
         phrase_1 = normal(phrase_1)
         phrase_2 = normal(phrase_2)

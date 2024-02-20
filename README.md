@@ -24,6 +24,16 @@ print(status)
 # Yes (they are lexically synonyms.)
 ```
 
+**Semantic Similarity**
+
+```Python
+from avesta.tools.similarity.semantic_sim import semantic_synonym_checker
+
+status = semantic_synonym_checker ("پیراهن مردانه مشکی", "پیراهن سیاه مردانه")
+print(status)
+# Yes (they are semantically synonyms.)
+```
+
 
 **Character based Similarity**
 
