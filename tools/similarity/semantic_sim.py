@@ -9,7 +9,7 @@ from avesta.tools.stemmers import ps
 warnings.simplefilter('ignore', category=UserWarning)
 syn_data_path = Path(__file__).parent.parent.parent / "resources" / "synonym"
 ecom_synonyms = pd.read_csv(Path.joinpath(syn_data_path, "ecom_synonyms.csv"))
-ecom_synonyms_dict = ecom_synonyms.set_index('one').T.to_dict('list')
+ecom_synonyms_dict = ecom_synonyms.set_index('two').T.to_dict('list')
 ecom_synonyms_dict_rev = ecom_synonyms.set_index('two').T.to_dict('list')
 
 term_1 = ''
@@ -38,12 +38,12 @@ def semantic_synonym_checker(phrase_1, phrase_2):
     result = 'No'
     for word in phrase_1.split():
         for token in ecom_synonyms_dict.keys():
-            if token == word:
+            if token.lower() == word.lower():
                 phrase_1 = phrase_1.replace(token, ecom_synonyms_dict[token][0])
                 is_synonym_affected = True
     for word in phrase_2.split():
         for token in ecom_synonyms_dict.keys():
-            if token == word:
+            if token.lower() == word.lower():
                 phrase_2 = phrase_2.replace(token, ecom_synonyms_dict[token][0])
                 is_synonym_affected = True
     if is_synonym_affected:
