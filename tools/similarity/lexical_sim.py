@@ -17,7 +17,7 @@ def normal(term):
             term = term.replace(' ' + i + ' ', ' ')
     if to_stem:
         if ' ' in term_1 and ' ' in term_2:
-            term = ''.join(sorted("".join([ps.run(i) for i in term.split()])))
+            term = ''.join(sorted([ps.run(i) for i in term.split()]))
         else:
             if ' ' not in term_1 and ' ' not in term_2:
                 term = "".join([ps.run(i) for i in term.split()])
@@ -25,7 +25,7 @@ def normal(term):
                 term = "".join([ps.run(i) for i in term.split()])
     else:
         if ' ' in term_1 and ' ' in term_2:
-            term = ''.join(sorted("".join((term.split()))))
+            term = ''.join(sorted(term.split()))
         else:
             term = "".join(term.split())
     return term
