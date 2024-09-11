@@ -29,11 +29,10 @@ print(status)
 ```Python
 from avesta.tools.similarity.semantic_sim import semantic_synonym_checker
 
-status = semantic_synonym_checker ("پیراهن مردانه مشکی", "پیراهن سیاه مردانه")
+status = semantic_synonym_checker("پیراهن مردانه مشکی", "پیراهن سیاه مردانه")
 print(status)
 # Yes (they are semantically synonyms.)
 ```
-
 
 **Character based Similarity**
 
@@ -47,4 +46,16 @@ sim = similarity()
 status = sim.char_based_similarity("avesta", "a vesta", threshold=1)
 print(status)
 # True (The distance is less than or equal to threshold.)
+````
+
+**Handle whitespace mistakes as part of spell checking**
+
+```Python
+
+# Character based similarity gives the distance between two strings. 
+
+from avesta.tools.spell_checker.whitespace_handler import correct_spacing
+
+print(correct_spacing("مانتوزنانه"))
+# 'مانتو زنانه'
 ````
