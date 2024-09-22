@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "avesta"
-version = "0.18"
+version = "0.19"
 description = "A Python library for text processing"
 authors = ["Majid Fahandezi Sadi <mfsadi.work@gmail.com>"]
 license = "MIT"
