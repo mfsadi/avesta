@@ -23,8 +23,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install setuptools wheel
+          using: 'node20'
       - name: Build package
         run: |
           python setup.py sdist bdist_wheel  # Could also be python -m build
+          using: 'node20'
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
