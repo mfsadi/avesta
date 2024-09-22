@@ -1,8 +1,7 @@
 name: Build and Publish to PyPI
 
-on:
-  release:
-    types: [published]  # Triggers when a release is published
+on: push
+# Triggers when a release is published
 
 jobs:
   build-and-publish:
