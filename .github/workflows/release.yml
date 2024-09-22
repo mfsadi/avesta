@@ -1,25 +1,45 @@
-name: github-release
+name: Publish and Sign Release
 
 on:
   push:  # Trigger on push event
 
 jobs:
-  github-release:
-    name: Sign the Python 🐍 distribution 📦 with Sigstore
-    needs:
-      - publish-to-pypi
+  publish-and-sign:
+    name: Publish to PyPI and Sign the Python 🐍 distribution 📦 with Sigstore
     runs-on: ubuntu-latest
     permissions:
       contents: write  # Mandatory for making GitHub Releases
       id-token: write  # Mandatory for sigstore
 
     steps:
+    - name: Check out the code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
+
+    - name: Install Poetry
+      run: pip install poetry
+
+    - name: Install dependencies
+      run: poetry install
+
+    - name: Build distribution
+      run: poetry build
+
+    - name: Publish to PyPI
+      uses: pypa/gh-action-pypi-publish@main
+      with:
+        password: ${{ secrets.PYPI_API_TOKEN }}
+
     - name: Download all the dists
       uses: actions/download-artifact@v4
       with:
         name: python-package-distributions
         path: dist/
-    
+
     - name: Sign the dists with Sigstore
       uses: sigstore/gh-action-sigstore-python@v2.1.1
       with:
