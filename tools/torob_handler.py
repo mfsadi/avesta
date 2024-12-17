@@ -4,30 +4,8 @@ import requests
 class TorobAPI:
     def __init__(self, cookies=None, headers=None):
         self.base_url = "https://api.torob.com"
-        self.cookies = cookies or {
-            'search_session': 'nkgfgycbzttafpcfwdjwsuurtsccuenl',
-            '_ga': 'GA1.1.209432467.1730288294',
-            'new_question_visibility': 'false',
-            'deliver_city': '798',
-            '_ga_RXJQRSCLTR': 'GS1.1.1732706297.6.1.1732706547.60.0.0',
-            'display_mode': '',
-            'is_torob_user_logged_in': 'False',
-            '_ga_CF4KGKM3PG': 'GS1.1.1734440325.1.1.1734441570.0.0.0',
-        }
-        self.headers = headers or {
-            'accept': '*/*',
-            'accept-language': 'en-US,en;q=0.9,fa;q=0.8',
-            'origin': 'https://torob.com',
-            'priority': 'u=1, i',
-            'referer': 'https://torob.com/',
-            'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
-            'sec-ch-ua-mobile': '?0',
-            'sec-ch-ua-platform': '"Linux"',
-            'sec-fetch-dest': 'empty',
-            'sec-fetch-mode': 'cors',
-            'sec-fetch-site': 'same-site',
-            'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
-        }
+        self.cookies = cookies
+        self.headers = headers
 
     def get_spellcheck(self, query):
         """Fetch spellcheck suggestions for a query."""
